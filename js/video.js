@@ -10,6 +10,7 @@ var volume;
 var vid_speed
 var og;
 var os;
+var class_list;
 
 window.onload = function () {
 	video = document.getElementById("player1");
@@ -24,12 +25,13 @@ window.onload = function () {
 	volume = document.getElementById("volume");
 	os = document.getElementById("vintage");
 	og = document.getElementById("orig");
-
+	class_list = video.classList;
 	og.addEventListener("click", function () {
-		video.className = "video";
+
+		class_list.remove("oldSchool");
 	});
 	os.addEventListener("click", function () {
-		video.className = "oldSchool";
+		class_list.add("oldSchool");
 	});
 
 	slider.addEventListener("change", function () {
